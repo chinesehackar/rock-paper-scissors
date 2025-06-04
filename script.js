@@ -1,16 +1,19 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let randomNumber = Math.ceil(Math.random()*3);
     let randomChoice = "";
     switch (randomNumber) {
         case (1):
-            randomChoice = "rock"
+            randomChoice = "rock";
             break;
         case (2):
-            randomChoice = "paper"
+            randomChoice = "paper";
             break;
         case (3):
-            randomChoice = "scissors"
-            break
+            randomChoice = "scissors";
+            break;
         default:
             break;
     }
