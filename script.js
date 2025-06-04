@@ -17,6 +17,9 @@ function getComputerChoice() {
     return `The computer has chosen ${randomChoice}`
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+  let playerChoice = prompt("rock, paper, scissors: ")
+  return `the player has chosen ${playerChoice.toLowerCase()}!`;
+}
 
-
+console.log(getHumanChoice())
