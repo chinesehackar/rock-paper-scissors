@@ -1,3 +1,3 @@
 # rock-paper-scissors
 
-This exercises will be the first time I put to test my critical thinking skills in arguably the most rudimentary game. Wish me luck!
+This exercise tests my knowledge in building arguably one of the most rudimentary games--rock, paper scissors. It purely uses the console in the web browser so expect an empty page. Note that there is no reprompting to test for user input. For it to work, input "rock", "paper", or "scissors" in either uppercase or lowercase. Enjoy!
