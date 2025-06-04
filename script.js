@@ -17,12 +17,12 @@ function getComputerChoice() {
         default:
             break;
     }
-    return `The computer has chosen ${randomChoice}`
+    return randomChoice
 }
 
 function getHumanChoice() {
   let playerChoice = prompt("rock, paper, scissors: ")
-  return `the player has chosen ${playerChoice.toLowerCase()}!`;
+  return playerChoice;
 }
 
 console.log(getHumanChoice())
