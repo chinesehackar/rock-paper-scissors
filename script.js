@@ -48,13 +48,28 @@ function playRound(humanChoice, computerChoice) {
     console.log("You win! Scissors beat paper");
     computerScore++;
   } else {
-    console.log("Game invalidated");
+    console.log("Choice invalidated");
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    let humanSelection;
+    let computerSelection;
+    for (let i = 0; i < 5; i++) {
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+    if (humanScore > computerScore) {
+        console.log("You Win the Game!");
+        console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
+    } else if (humanScore < computerScore) {
+        console.log("You Lose the Game!");
+        console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
+    } else {
+        console.log("Game Draw")
+        console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
+    }
+}
 
-playRound(humanSelection, computerSelection);
-
-
+playGame();
