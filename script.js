@@ -1,7 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 const buttons = document.querySelectorAll("button");
-const bod = document.querySelector("body");
+const wrapper = document.querySelector(".wrapper");
 let div = document.querySelector(".round-win");
 let status = document.querySelector(".status");
 let runningScore = document.querySelector(".running-score");
@@ -29,6 +29,19 @@ buttons.forEach(item => {
   item.addEventListener("click", function (e) {
     let humanChoice = e.target.textContent.toLowerCase();
     let computerChoice = getComputerChoice();
+
+    buttons.forEach(btn => {
+      btn.classList.remove("rock-choice", "paper-choice", "scissors-choice");
+    });
+
+    if (humanChoice === "rock") {
+      e.target.classList.add("rock-choice");
+    } else if (humanChoice === "paper") {
+      e.target.classList.add("paper-choice");
+    } else if (humanChoice === "scissors") {
+      e.target.classList.add("scissors-choice")
+    }
+
     playRound(humanChoice,computerChoice);
   })
 })

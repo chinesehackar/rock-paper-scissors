@@ -8,15 +8,47 @@
     <script src="script.js" defer></script>
 </head>
 
-<body class="bod">
-    <h1 class="running-score"></h1>
-    <div class="buttons">
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+<body>
+    <div class="wrapper">
+        <h1>Rock Paper Scissors!</h1>
+        <h2 class="running-score"></h2>
+        <div class="buttons">
+            <button>Rock</button>
+            <button>Paper</button>
+            <button>Scissors</button>
+        </div>
+        <div class="status"></div>
+        <div class="round-win"></div>
     </div>
-    <div class="status"></div>
-    <div class="round-win"></div>
+    <style>
+        .wrapper {
+            height: 80dvh;
+            width: 800px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: white;
+            margin-bottom: 16px;
+        }
+
+        .rock-choice {
+            background-color: #315eff;
+        }
+
+        .paper-choice {
+            background-color: #83ff56;
+        }
+
+        .scissors-choice {
+            background-color: #ffc848
+        }
+    </style>
 </body>
 
 </html>
