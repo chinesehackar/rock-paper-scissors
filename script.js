@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+const buttons = document.querySelectorAll("button");
 
 function getComputerChoice() {
     let randomNumber = Math.ceil(Math.random()*3);
@@ -20,10 +21,18 @@ function getComputerChoice() {
     return randomChoice
 }
 
-function getHumanChoice() {
-  let playerChoice = prompt("rock, paper, scissors: ")
-  return playerChoice.toLowerCase();
-}
+buttons.forEach(item => {
+  item.addEventListener("click", function (e) {
+    let humanChoice = e.target.textContent.toLowerCase();
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice);
+  })
+})
+
+// function getHumanChoice(e) {
+//   let playerChoice = prompt("rock, paper, scissors: ")
+//   return playerChoice.toLowerCase();
+// }
 
 function playRound(humanChoice, computerChoice) {
   console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}`);
@@ -73,3 +82,6 @@ function playGame() {
 }
 
 // playGame();
+
+//
+//two errors: our choice is [object pointer event] and computer choice undefined.
