@@ -2,10 +2,9 @@ let humanScore = 0;
 let computerScore = 0;
 const buttons = document.querySelectorAll("button");
 const bod = document.querySelector("body");
-let div = document.createElement("div");
-let status = document.createElement("div");
-bod.appendChild(status);
-bod.appendChild(div);
+let div = document.querySelector(".round-win");
+let status = document.querySelector(".status");
+let runningScore = document.querySelector(".running-score");
 
 function getComputerChoice() {
     let randomNumber = Math.ceil(Math.random()*3);
@@ -64,27 +63,37 @@ function playRound(humanChoice, computerChoice) {
   } else {
     div.textContent = " Choice invalidated";
   }
+  runningScore.textContent = `first to five: You: ${humanScore}. Computer: ${computerScore}`;
+  if (computerScore === 5) {
+    runningScore.textContent = `You Lose! You: ${humanScore}. Computer: ${computerScore}`
+    computerScore = 0;
+    humanScore = 0;
+  } else if (humanScore === 5) {
+    runningScore.textContent = `You Win! You: ${humanScore}. Computer: ${computerScore}`
+    computerScore = 0;
+    humanScore = 0;
+  }
 }
 
-function playGame() {
-    let humanSelection;
-    let computerSelection;
-    for (let i = 0; i < 5; i++) {
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
-    if (humanScore > computerScore) {
-        console.log("You Win the Game!");
-        console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
-    } else if (humanScore < computerScore) {
-        console.log("You Lose the Game!");
-        console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
-    } else {
-        console.log("Game Draw")
-        console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
-    }
-}
+// function playGame() {
+//     let humanSelection;
+//     let computerSelection;
+//     for (let i = 0; i < 5; i++) {
+//         humanSelection = getHumanChoice();
+//         computerSelection = getComputerChoice();
+//         playRound(humanSelection, computerSelection);
+//     }
+//     if (humanScore > computerScore) {
+//         console.log("You Win the Game!");
+//         console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
+//     } else ievef (humanScore < computerScore) {
+//         console.log("You Lose the Game!");
+//         console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
+//     } else {
+//         console.log("Game Draw")
+//         console.log(`Final Score = ${humanScore} (You). ${computerScore} (Computer)`)
+//     }
+// }
 
 // playGame();
 
