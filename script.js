@@ -1,6 +1,11 @@
 let humanScore = 0;
 let computerScore = 0;
 const buttons = document.querySelectorAll("button");
+const bod = document.querySelector("body");
+let div = document.createElement("div");
+let status = document.createElement("div");
+bod.appendChild(status);
+bod.appendChild(div);
 
 function getComputerChoice() {
     let randomNumber = Math.ceil(Math.random()*3);
@@ -35,29 +40,29 @@ buttons.forEach(item => {
 // }
 
 function playRound(humanChoice, computerChoice) {
-  console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}`);
+  status.textContent = `You chose ${humanChoice}; the computer chose ${computerChoice}.`
   if (humanChoice === computerChoice) {
-    console.log("It's a Tie!");
+    div.textContent = " It's a Tie!";
   } else if (humanChoice === "rock" && computerChoice === "paper") {
-    console.log("You lose! Paper beats Rock.");
+    div.textContent = " You lose! Paper beats Rock.";
     computerScore++;
   } else if (humanChoice === "rock" && computerChoice === "scissors") {
-    console.log("You win! Rock beats Scissors.");
+    div.textContent = " You win! Rock beats Scissors.";
     humanScore++;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("You win! Paper beats rock.");
+    div.textContent = " You win! Paper beats rock.";
     humanScore++;
   } else if (humanChoice === "paper" && computerChoice === "scissors") {
-    console.log("You lose! Scissors beat paper");
+    div.textContent = " You lose! Scissors beat paper";
     computerScore++;
   } else if (humanChoice === "scissors" && computerChoice === "rock") {
-    console.log("You lose! Rock beats scissors");
+    div.textContent = " You lose! Rock beats scissors";
     computerScore++;
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
-    console.log("You win! Scissors beat paper");
+    div.textContent = " You win! Scissors beat paper";
     computerScore++;
   } else {
-    console.log("Choice invalidated");
+    div.textContent = " Choice invalidated";
   }
 }
 
